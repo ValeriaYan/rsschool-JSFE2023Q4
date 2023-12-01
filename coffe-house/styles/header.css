@@ -9,15 +9,45 @@
     display: flex;
     margin: 0 0 6px 30px;
 }
+
 .nav__item {
+    position: relative;
     margin: 0 40px 0 0;
 }
-.header__menu {
-    position: relative;
-    margin: 0 28px 4px 0;
+
+.nav__item::before,
+.header__menu:before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 50%;
+    background-color: var(--text-color-dark);
+    transition: all ease 0.5s;
 }
 
-.header__menu::after {
+.nav__item:hover::before,
+.header__menu:hover::before {
+    width: 100%;
+    left: 0;
+    transition: all ease 0.5s;
+}
+
+.header__menu {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 72px;
+    cursor: pointer;
+}
+
+.header__menu svg {
+    margin: 0 0 3px 0;
+}
+
+/* .header__menu::after {
     content: "";
     background-image: url(../assets/icons/coffee-cup.svg);
     position: absolute;
@@ -25,4 +55,4 @@
     height: 20px;
     top: -3px;
     right: -28px;
-}
+} */
