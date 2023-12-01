@@ -58,8 +58,14 @@ a {
 }
 
 .wrapper {
+    display: flex;
+    flex-direction: column;
     max-width: 1440px;
     margin: 0 auto;
+}
+
+.main {
+    flex: 1 1 100vh;
 }
 
 .container {
@@ -95,6 +101,7 @@ a {
 .button {
     display: inline-block;
     border-radius: 100px;
+    cursor: pointer;
 }
 .button-primary {
     position: relative;
@@ -174,4 +181,56 @@ a {
 .button-app:hover .button-app__name {
     color: var(--background-color-body);
     transition: all ease 0.5s;
+}
+
+.button-tab {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 16px 8px 8px;
+    border: 1px solid var(--border-color-light);
+    transition: all ease 0.5s;
+}
+
+.button-tab.active,
+.button-tab:hover{
+    background-color: var(--background-color-container);
+    color: var(--text-color-light);
+    transition: all ease 0.5s;
+}
+
+.button-tab__icon {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background-color: var(--border-color-light);
+    border-radius: 50%;
+    margin: 0 8px 0 0;
+}
+
+.button-tab__icon:last-child {
+    margin: 0;
+}
+
+.button-tab__icon::before {
+    content: "";
+    position: absolute;
+    width: 17px;
+    height: 17px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-repeat: no-repeat;
+}
+
+.button-tab_dessert > .button-tab__icon::before {
+    background-image: url(../assets/icons/dessert-icon.png);
+}
+
+.button-tab_coffee > .button-tab__icon::before {
+    background-image: url(../assets/icons/coffee-icon.png);
+}
+
+.button-tab_tea > .button-tab__icon::before {
+    background-image: url(../assets/icons/tea-icon.png);
 }

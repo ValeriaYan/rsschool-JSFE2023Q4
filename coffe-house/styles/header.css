@@ -47,6 +47,16 @@
     margin: 0 0 3px 0;
 }
 
+.header__menu.active::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--text-color-dark);
+}
+
 /* .header__menu::after {
     content: "";
     background-image: url(../assets/icons/coffee-cup.svg);
