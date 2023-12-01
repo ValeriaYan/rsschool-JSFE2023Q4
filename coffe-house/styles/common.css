@@ -12,6 +12,14 @@
     --font-size-normal: 16px;
     --font-size-subtitle: 24px;
     --font-size-title: 60px;
+    --font-size-h1: 72px;
+
+    --margin-between-content: 40px;
+    --margin-between-sections: 100px;
+}
+
+* {
+    box-sizing: border-box;
 }
 
 body {
@@ -28,6 +36,15 @@ ul {
     padding: 0;
 }
 
+p {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-color-dark);
+}
+
 .wrapper {
     max-width: 1440px;
     margin: 0 auto;
@@ -40,4 +57,50 @@ ul {
 
 .title {
     font-size: var(--font-size-title);
+}
+
+.title__accent {
+    color: var(--text-color-accent);
+    font-style: italic;
+}
+
+.button {
+    display: inline-block;
+    border-radius: 100px;
+    background-color: var(--background-color-body);
+}
+.button-primary {
+    position: relative;
+    padding: 20px 78px;
+}
+
+.button-primary > p {
+    transition: all ease 0.5s;
+}
+
+.button-primary::before {
+    content: "";
+    background-image: url(../assets/icons/coffee-cup.svg);
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    transform: translate(0, -57%);
+    right: 60px;
+
+    visibility: hidden;
+    opacity: 0;
+
+    transition: all ease 0.5s;
+}
+
+.button-primary:hover::before {
+    visibility: visible;
+    opacity: 1;
+    transition: all ease 0.5s;
+}
+
+.button-primary:hover > p{
+    transform: translate(-10px, 0);
+    transition: all ease 0.5s;
 }

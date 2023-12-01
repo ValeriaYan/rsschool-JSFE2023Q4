@@ -1,3 +1,32 @@
 @import url(../../styles/normalize.css);
 @import url(../../styles/common.css);
 @import url(../../styles/header.css);
+
+.enjoy {
+    margin: 0 0 var(--margin-between-sections) 0;
+}
+
+.enjoy__container {
+    background-image: url(../../assets/images/coffee-background.jpg);
+    background-position: center;
+    background-size: cover;
+    padding: 100px;
+    border-radius: 40px;
+}
+
+.enjoy__body {
+    max-width: 530px;
+}
+.enjoy__title {
+    font-size: 72px;
+    line-height: 105%;
+    color: var(--text-color-light);
+    margin: 0 0 var(--margin-between-content) 0;
+}
+
+.enjoy__text {
+    margin: 0 0 var(--margin-between-content) 0;
+    font-weight: 400;
+    line-height: 150%;
+    color: var(--text-color-light);
+}
