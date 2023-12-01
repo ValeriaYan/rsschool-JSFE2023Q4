@@ -1,0 +1,28 @@
+.header__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.nav__list {
+    display: flex;
+    margin: 0 0 6px 30px;
+}
+.nav__item {
+    margin: 0 40px 0 0;
+}
+.header__menu {
+    position: relative;
+    margin: 0 28px 4px 0;
+}
+
+.header__menu::after {
+    content: "";
+    background-image: url(../assets/icons/coffee-cup.svg);
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: -3px;
+    right: -28px;
+}
