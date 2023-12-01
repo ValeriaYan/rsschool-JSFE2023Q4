@@ -90,11 +90,11 @@ a {
 .button {
     display: inline-block;
     border-radius: 100px;
-    background-color: var(--background-color-body);
 }
 .button-primary {
     position: relative;
     padding: 20px 78px;
+    background-color: var(--background-color-body);
 }
 
 .button-primary > p {
@@ -125,5 +125,48 @@ a {
 
 .button-primary:hover > p{
     transform: translate(-10px, 0);
+    transition: all ease 0.5s;
+}
+
+.button-app {
+    position: relative;
+    border: 1px solid var(--border-dark, #665F55);
+    padding: 12px 0 12px 64px;
+    width: 200px;
+    transition: all ease 0.5s;
+}
+
+.button-app:hover {
+    background-color: var(--border-color-dark);
+    transition: all ease 0.5s;
+}
+
+.button-app svg {
+    position: absolute;
+    left: 20px;
+}
+
+.button-app svg path {
+    fill: var(--text-color-dark);
+    transition: all ease 0.5s;
+}
+
+.button-app:hover svg path {
+    fill: var(--background-color-body);
+    transition: all ease 0.5s;
+}
+
+.button-app__small {
+    font-size: var(--font-size-small);
+    line-height: 145%;
+}
+
+.button-app__name {
+    line-height: 150%;
+}
+
+.button-app:hover .button-app__small,
+.button-app:hover .button-app__name {
+    color: var(--background-color-body);
     transition: all ease 0.5s;
 }
