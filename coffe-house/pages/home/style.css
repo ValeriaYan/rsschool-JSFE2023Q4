@@ -22,7 +22,7 @@
     max-width: 530px;
 }
 .enjoy__title {
-    font-size: 72px;
+    font-size: var(--font-size-h1);
     line-height: 105%;
     color: var(--text-color-light);
     margin: 0 0 var(--margin-between-content) 0;
@@ -81,7 +81,7 @@
 }
 
 .slide__img {
-    width: 480px;
+    width: 100%;
     margin: 0 0 20px 0;
 }
 
@@ -120,10 +120,9 @@
 }
 
 .about__pictures {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 40px;
-    align-items: flex-start;
 }
 
 .about__pictures_col1,
@@ -136,7 +135,7 @@
 .about__img {
     position: relative;
     overflow: hidden;
-    width: 660px;
+    /* width: 50%; */
     border-radius: 20px;
 }
 
@@ -162,13 +161,8 @@
 }
 
 .mobile__container {
-    padding: 144px 0;
-    background-image: url(../../assets/images/mobile-screens.png);
-    background-repeat: no-repeat;
-    background-position: 100% 0;
-}
-.mobile__container {
     display: flex;
+    justify-content: space-between;
 }
 
 .mobile__body {
@@ -192,3 +186,99 @@
     margin: 0;
 }
 
+
+@media (max-width: 1230px) {
+    .mobile__container {
+        flex-direction: column;
+        align-items: center;
+        gap: 100px;
+    }
+
+    .mobile__body {
+        max-width: 100%;
+    }
+
+    .mobile__title,
+    .mobile__text {
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .enjoy__container {
+       padding: 100px 60px;
+    }
+
+    .mobile__title,
+    .mobile__text {
+        text-align: left;
+    }
+
+    .about__img_small {
+        display: none;
+    }
+
+    .about__pictures {
+        grid-template-columns: 1fr;
+    }
+
+    .about__img img {
+        transform: scale(105%);
+    }
+    
+    .about__img:hover img {
+        transform: scale(97%);
+    }
+}
+
+@media (max-width: 692px) {
+    .slider__button {
+        display: none;
+    }
+
+    .favorite__slider {
+        justify-content: center;
+    }
+
+    .mobile__img {
+        width: 100%;
+    }
+
+    .mobile__img img {
+        width: 100%;
+        object-fit: cover;
+    }
+}
+
+@media (max-width: 546px) {
+    .enjoy__container {
+       padding: 60px 16px;
+    }
+}
+
+@media (max-width: 453px) {
+    .enjoy__title {
+        line-height: 115%
+    }
+
+    .mobile__container {
+        gap: 40px;
+    }
+
+    .mobile__buttons {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .mobile__button {
+        margin: 0 0 20px 0;
+    }
+
+    .mobile__button:last-child {
+        margin: 0;
+    }
+
+    .about__img img {
+        transform: scale(125%);
+    }
+} 

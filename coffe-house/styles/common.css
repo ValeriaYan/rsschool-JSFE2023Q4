@@ -18,6 +18,14 @@
     --margin-between-sections: 100px;
 }
 
+@media (max-width: 768px) {
+    :root {
+        --font-size-subtitle: 24px;
+        --font-size-title: calc((100vw - 380px)/(768 - 380) * (60 - 32) + 32px);
+        --font-size-h1: calc((100vw - 380px)/(768 - 380) * (72 - 42) + 42px);
+    }
+}
+
 * {
     box-sizing: border-box;
 }
@@ -61,6 +69,7 @@ a {
     display: flex;
     flex-direction: column;
     max-width: 1440px;
+    padding: 0 40px;
     margin: 0 auto;
 }
 
@@ -233,4 +242,22 @@ a {
 
 .button-tab_tea > .button-tab__icon::before {
     background-image: url(../assets/icons/tea-icon.png);
+}
+
+@media (max-width: 768px) {
+    .button-primary::before {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .button-primary p {
+        position: relative;
+        left: -10px;
+    }
+}
+
+@media (max-width: 630px) {
+    .wrapper {
+        padding: 0 16px;
+    }
 }
