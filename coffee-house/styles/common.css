@@ -18,6 +18,14 @@
     --margin-between-sections: 100px;
 }
 
+@media (max-width: 768px) {
+    :root {
+        --font-size-subtitle: 24px;
+        --font-size-title: calc((100vw - 380px)/(768 - 380) * (60 - 32) + 32px);
+        --font-size-h1: calc((100vw - 380px)/(768 - 380) * (72 - 42) + 42px);
+    }
+}
+
 * {
     box-sizing: border-box;
 }
@@ -61,6 +69,7 @@ a {
     display: flex;
     flex-direction: column;
     max-width: 1440px;
+    padding: 0 40px;
     margin: 0 auto;
 }
 
@@ -103,6 +112,17 @@ a {
     border-radius: 100px;
     cursor: pointer;
 }
+
+.button-round {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 1px solid var(--border-color-dark, #665F55);
+    transition: all ease 0.5s;
+
+    cursor: pointer;
+}
+
 .button-primary {
     position: relative;
     padding: 20px 78px;
@@ -129,27 +149,11 @@ a {
     transition: all ease 0.5s;
 }
 
-.button-primary:hover::before {
-    visibility: visible;
-    opacity: 1;
-    transition: all ease 0.5s;
-}
-
-.button-primary:hover > p{
-    transform: translate(-10px, 0);
-    transition: all ease 0.5s;
-}
-
 .button-app {
     position: relative;
     border: 1px solid var(--border-dark, #665F55);
     padding: 12px 0 12px 64px;
     width: 200px;
-    transition: all ease 0.5s;
-}
-
-.button-app:hover {
-    background-color: var(--border-color-dark);
     transition: all ease 0.5s;
 }
 
@@ -163,11 +167,6 @@ a {
     transition: all ease 0.5s;
 }
 
-.button-app:hover svg path {
-    fill: var(--background-color-body);
-    transition: all ease 0.5s;
-}
-
 .button-app__small {
     font-size: var(--font-size-small);
     line-height: 145%;
@@ -175,12 +174,6 @@ a {
 
 .button-app__name {
     line-height: 150%;
-}
-
-.button-app:hover .button-app__small,
-.button-app:hover .button-app__name {
-    color: var(--background-color-body);
-    transition: all ease 0.5s;
 }
 
 .button-tab {
@@ -192,8 +185,7 @@ a {
     transition: all ease 0.5s;
 }
 
-.button-tab.active,
-.button-tab:hover{
+.button-tab.active {
     background-color: var(--background-color-container);
     color: var(--text-color-light);
     transition: all ease 0.5s;
@@ -233,4 +225,63 @@ a {
 
 .button-tab_tea > .button-tab__icon::before {
     background-image: url(../assets/icons/tea-icon.png);
+}
+
+@media (hover: none) {
+    .button-primary::before {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .button-primary p {
+        position: relative;
+        left: -10px;
+    }
+
+}
+
+@media (hover: hover) {
+    .button-round:hover {
+        background-color: var(--background-color-container);
+        transition: all ease 0.5s;
+    }
+
+    .button-primary:hover::before {
+        visibility: visible;
+        opacity: 1;
+        transition: all ease 0.5s;
+    }
+    
+    .button-primary:hover > p{
+        transform: translate(-10px, 0);
+        transition: all ease 0.5s;
+    }
+
+    .button-app:hover {
+        background-color: var(--border-color-dark);
+        transition: all ease 0.5s;
+    }
+
+    .button-app:hover svg path {
+        fill: var(--background-color-body);
+        transition: all ease 0.5s;
+    }
+
+    .button-app:hover .button-app__small,
+    .button-app:hover .button-app__name {
+        color: var(--background-color-body);
+        transition: all ease 0.5s;
+    }
+
+    .button-tab:hover{
+        background-color: var(--background-color-container);
+        color: var(--text-color-light);
+        transition: all ease 0.5s;
+    }
+}
+
+@media (max-width: 630px) {
+    .wrapper {
+        padding: 0 16px;
+    }
 }

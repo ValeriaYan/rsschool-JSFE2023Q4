@@ -27,13 +27,6 @@
     transition: all ease 0.5s;
 }
 
-.nav__item:hover::before,
-.header__menu:hover::before {
-    width: 100%;
-    left: 0;
-    transition: all ease 0.5s;
-}
-
 .header__menu {
     position: relative;
     display: flex;
@@ -57,12 +50,54 @@
     background-color: var(--text-color-dark);
 }
 
-/* .header__menu::after {
+.header__burger-icon {
+    display: none;
+    position: relative;
+    width: 44px;
+    height: 44px;
+    border-radius: 100px;
+    border: 1px solid var(--border-color-dark, #665F55);
+}
+
+.header__burger-icon::before,
+.header__burger-icon::after {
     content: "";
-    background-image: url(../assets/icons/coffee-cup.svg);
     position: absolute;
-    width: 20px;
-    height: 20px;
-    top: -3px;
-    right: -28px;
-} */
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 18px;
+    height: 2px;
+    background-color: var(--border-color-dark);
+    border-radius: 1px;
+}
+
+.header__burger-icon::after {
+    top: 60%;
+}
+
+@media (max-width: 776px) {
+    .nav__item {
+        margin: 0 35px 0 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .header__nav,
+    .header__menu {
+        display: none;
+    }
+
+    .header__burger-icon {
+        display: inline-block;
+    }
+}
+
+@media (hover: hover) {
+    .nav__item:hover::before,
+    .header__menu:hover::before {
+        width: 100%;
+        left: 0;
+        transition: all ease 0.5s;
+    }
+}

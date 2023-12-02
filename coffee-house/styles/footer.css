@@ -1,13 +1,10 @@
 .footer__container {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
     padding: 100px;
     background-color: var(--background-color-container);
     border-radius: 40px;
-}
-
-.social-media {
-    max-width: 530px;
-    margin: 0 100px 0 0;
 }
 
 .social-media__title {
@@ -45,16 +42,6 @@
     transition: all ease 0.5s;
 }
 
-.social-media__item:hover {
-    background-color: var(--background-color-body);
-    transition: all ease 0.5s;
-}
-
-.social-media__item:hover svg path{
-   stroke: var(--border-color-dark);
-   transition: all ease 0.5s;
-}
-
 .footer__contacts {
     padding: 30px 0;
 }
@@ -81,20 +68,19 @@
     margin: 0;
 }
 
+.contacts__item a {
+    position: relative;
+}
+
 .contacts__item a::after {
     content: "";
     position: absolute;
     width: 0;
     height: 2px;
     bottom: -5px;
-    left: 35%;
+    left: 45%;
     background-color: var(--text-color-light);
     transition: all ease 0.5s;
-}
-
-.contacts__item a:hover::after {
-    width: 70%;
-    left: 0;
 }
 
 .contacts__item::before {
@@ -116,4 +102,44 @@
 
 .contacts_clock:before {
     background-image: url(../assets/icons/clock.svg);
+}
+
+@media (max-width: 1132px) {
+    .footer__container {
+        padding: 100px 60px;
+    }
+
+    .footer__contacts {
+        padding: 0;
+    }
+}
+
+@media (max-width: 957px) {
+    .footer__container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 546px) {
+    .footer__container {
+       padding: 60px 16px;
+       gap: 38px;
+    }
+}
+
+@media (hover: hover) {
+    .social-media__item:hover {
+        background-color: var(--background-color-body);
+        transition: all ease 0.5s;
+    }
+    
+    .social-media__item:hover svg path{
+       stroke: var(--border-color-dark);
+       transition: all ease 0.5s;
+    }
+
+    .contacts__item a:hover::after {
+        width: 125%;
+        left: -28px;
+    }
 }
