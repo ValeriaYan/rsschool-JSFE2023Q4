@@ -1,0 +1,236 @@
+:root {
+    --text-color-dark: #403F3D;
+    --text-color-light: #E1D4C9;
+    --text-color-accent: #B0907A;
+    --background-color-body: #E1D4C9;
+    --background-color-container: #665F55;
+    --background-color-backdrop: rgba(64, 63, 61, 0.8);
+    --border-color-light: #C1B6AD;
+    --border-color-dark: #665F55;
+
+    --font-size-small: 10px;
+    --font-size-normal: 16px;
+    --font-size-subtitle: 24px;
+    --font-size-title: 60px;
+    --font-size-h1: 72px;
+
+    --margin-between-content: 40px;
+    --margin-between-sections: 100px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter';
+    font-weight: 600;
+    color: var(--text-color-dark);
+    background-color: var(--background-color-body);
+}
+
+h2 {
+    padding: 0;
+    margin: 0;
+    line-height: 125%;
+}
+
+li {
+    list-style: none;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+p {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-color-dark);
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.main {
+    flex: 1 1 100vh;
+}
+
+.container {
+    max-width: 1360px;
+    margin: 0 auto;
+}
+
+.title {
+    font-size: var(--font-size-title);
+}
+
+.title__accent {
+    color: var(--text-color-accent);
+    font-style: italic;
+}
+
+.text {
+    font-weight: 400;
+    line-height: 150%;
+}
+
+.name {
+    font-size: var(--font-size-subtitle);
+    line-height: 125%;
+}
+
+.price {
+    font-size: var(--font-size-subtitle);
+    font-weight: 600;
+    line-height: 125%;
+}
+
+.button {
+    display: inline-block;
+    border-radius: 100px;
+    cursor: pointer;
+}
+.button-primary {
+    position: relative;
+    padding: 20px 78px;
+    background-color: var(--background-color-body);
+}
+
+.button-primary > p {
+    transition: all ease 0.5s;
+}
+
+.button-primary::before {
+    content: "";
+    background-image: url(../assets/icons/coffee-cup.svg);
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    transform: translate(0, -57%);
+    right: 60px;
+
+    visibility: hidden;
+    opacity: 0;
+
+    transition: all ease 0.5s;
+}
+
+.button-primary:hover::before {
+    visibility: visible;
+    opacity: 1;
+    transition: all ease 0.5s;
+}
+
+.button-primary:hover > p{
+    transform: translate(-10px, 0);
+    transition: all ease 0.5s;
+}
+
+.button-app {
+    position: relative;
+    border: 1px solid var(--border-dark, #665F55);
+    padding: 12px 0 12px 64px;
+    width: 200px;
+    transition: all ease 0.5s;
+}
+
+.button-app:hover {
+    background-color: var(--border-color-dark);
+    transition: all ease 0.5s;
+}
+
+.button-app svg {
+    position: absolute;
+    left: 20px;
+}
+
+.button-app svg path {
+    fill: var(--text-color-dark);
+    transition: all ease 0.5s;
+}
+
+.button-app:hover svg path {
+    fill: var(--background-color-body);
+    transition: all ease 0.5s;
+}
+
+.button-app__small {
+    font-size: var(--font-size-small);
+    line-height: 145%;
+}
+
+.button-app__name {
+    line-height: 150%;
+}
+
+.button-app:hover .button-app__small,
+.button-app:hover .button-app__name {
+    color: var(--background-color-body);
+    transition: all ease 0.5s;
+}
+
+.button-tab {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 16px 8px 8px;
+    border: 1px solid var(--border-color-light);
+    transition: all ease 0.5s;
+}
+
+.button-tab.active,
+.button-tab:hover{
+    background-color: var(--background-color-container);
+    color: var(--text-color-light);
+    transition: all ease 0.5s;
+}
+
+.button-tab__icon {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background-color: var(--border-color-light);
+    border-radius: 50%;
+    margin: 0 8px 0 0;
+}
+
+.button-tab__icon:last-child {
+    margin: 0;
+}
+
+.button-tab__icon::before {
+    content: "";
+    position: absolute;
+    width: 17px;
+    height: 17px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-repeat: no-repeat;
+}
+
+.button-tab_dessert > .button-tab__icon::before {
+    background-image: url(../assets/icons/dessert-icon.png);
+}
+
+.button-tab_coffee > .button-tab__icon::before {
+    background-image: url(../assets/icons/coffee-icon.png);
+}
+
+.button-tab_tea > .button-tab__icon::before {
+    background-image: url(../assets/icons/tea-icon.png);
+}
