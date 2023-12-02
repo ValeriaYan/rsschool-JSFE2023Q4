@@ -112,6 +112,22 @@ a {
     border-radius: 100px;
     cursor: pointer;
 }
+
+.button-round {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 1px solid var(--border-color-dark, #665F55);
+    transition: all ease 0.5s;
+
+    cursor: pointer;
+}
+
+.button-round:hover {
+    background-color: var(--background-color-container);
+    transition: all ease 0.5s;
+}
+
 .button-primary {
     position: relative;
     padding: 20px 78px;
