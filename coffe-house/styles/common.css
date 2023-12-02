@@ -123,11 +123,6 @@ a {
     cursor: pointer;
 }
 
-.button-round:hover {
-    background-color: var(--background-color-container);
-    transition: all ease 0.5s;
-}
-
 .button-primary {
     position: relative;
     padding: 20px 78px;
@@ -154,27 +149,11 @@ a {
     transition: all ease 0.5s;
 }
 
-.button-primary:hover::before {
-    visibility: visible;
-    opacity: 1;
-    transition: all ease 0.5s;
-}
-
-.button-primary:hover > p{
-    transform: translate(-10px, 0);
-    transition: all ease 0.5s;
-}
-
 .button-app {
     position: relative;
     border: 1px solid var(--border-dark, #665F55);
     padding: 12px 0 12px 64px;
     width: 200px;
-    transition: all ease 0.5s;
-}
-
-.button-app:hover {
-    background-color: var(--border-color-dark);
     transition: all ease 0.5s;
 }
 
@@ -188,11 +167,6 @@ a {
     transition: all ease 0.5s;
 }
 
-.button-app:hover svg path {
-    fill: var(--background-color-body);
-    transition: all ease 0.5s;
-}
-
 .button-app__small {
     font-size: var(--font-size-small);
     line-height: 145%;
@@ -200,12 +174,6 @@ a {
 
 .button-app__name {
     line-height: 150%;
-}
-
-.button-app:hover .button-app__small,
-.button-app:hover .button-app__name {
-    color: var(--background-color-body);
-    transition: all ease 0.5s;
 }
 
 .button-tab {
@@ -217,8 +185,7 @@ a {
     transition: all ease 0.5s;
 }
 
-.button-tab.active,
-.button-tab:hover{
+.button-tab.active {
     background-color: var(--background-color-container);
     color: var(--text-color-light);
     transition: all ease 0.5s;
@@ -260,7 +227,7 @@ a {
     background-image: url(../assets/icons/tea-icon.png);
 }
 
-@media (max-width: 768px) {
+@media (hover: none) {
     .button-primary::before {
         visibility: visible;
         opacity: 1;
@@ -269,6 +236,47 @@ a {
     .button-primary p {
         position: relative;
         left: -10px;
+    }
+
+}
+
+@media (hover: hover) {
+    .button-round:hover {
+        background-color: var(--background-color-container);
+        transition: all ease 0.5s;
+    }
+
+    .button-primary:hover::before {
+        visibility: visible;
+        opacity: 1;
+        transition: all ease 0.5s;
+    }
+    
+    .button-primary:hover > p{
+        transform: translate(-10px, 0);
+        transition: all ease 0.5s;
+    }
+
+    .button-app:hover {
+        background-color: var(--border-color-dark);
+        transition: all ease 0.5s;
+    }
+
+    .button-app:hover svg path {
+        fill: var(--background-color-body);
+        transition: all ease 0.5s;
+    }
+
+    .button-app:hover .button-app__small,
+    .button-app:hover .button-app__name {
+        color: var(--background-color-body);
+        transition: all ease 0.5s;
+    }
+
+    .button-tab:hover{
+        background-color: var(--background-color-container);
+        color: var(--text-color-light);
+        transition: all ease 0.5s;
     }
 }
 

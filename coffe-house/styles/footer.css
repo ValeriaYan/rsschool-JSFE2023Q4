@@ -42,16 +42,6 @@
     transition: all ease 0.5s;
 }
 
-.social-media__item:hover {
-    background-color: var(--background-color-body);
-    transition: all ease 0.5s;
-}
-
-.social-media__item:hover svg path{
-   stroke: var(--border-color-dark);
-   transition: all ease 0.5s;
-}
-
 .footer__contacts {
     padding: 30px 0;
 }
@@ -91,11 +81,6 @@
     left: 45%;
     background-color: var(--text-color-light);
     transition: all ease 0.5s;
-}
-
-.contacts__item a:hover::after {
-    width: 125%;
-    left: -28px;
 }
 
 .contacts__item::before {
@@ -139,5 +124,22 @@
     .footer__container {
        padding: 60px 16px;
        gap: 38px;
+    }
+}
+
+@media (hover: hover) {
+    .social-media__item:hover {
+        background-color: var(--background-color-body);
+        transition: all ease 0.5s;
+    }
+    
+    .social-media__item:hover svg path{
+       stroke: var(--border-color-dark);
+       transition: all ease 0.5s;
+    }
+
+    .contacts__item a:hover::after {
+        width: 125%;
+        left: -28px;
     }
 }

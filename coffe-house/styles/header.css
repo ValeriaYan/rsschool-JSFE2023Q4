@@ -27,13 +27,6 @@
     transition: all ease 0.5s;
 }
 
-.nav__item:hover::before,
-.header__menu:hover::before {
-    width: 100%;
-    left: 0;
-    transition: all ease 0.5s;
-}
-
 .header__menu {
     position: relative;
     display: flex;
@@ -97,5 +90,14 @@
 
     .header__burger-icon {
         display: inline-block;
+    }
+}
+
+@media (hover: hover) {
+    .nav__item:hover::before,
+    .header__menu:hover::before {
+        width: 100%;
+        left: 0;
+        transition: all ease 0.5s;
     }
 }

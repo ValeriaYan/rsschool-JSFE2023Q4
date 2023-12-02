@@ -38,11 +38,7 @@
 .preview {
     border-radius: 40px;
     border: 1px solid var(--border-light, #C1B6AD);
-}
-
-.preview:hover >  .preview__img img {
-    transform: scale(100%);
-    transition: all ease 0.5s;
+    cursor: pointer;
 }
 
 .preview__img {
@@ -87,11 +83,6 @@
     transition: all ease 0.5s;
 }
 
-.menu__button:hover svg path {
-    stroke: var(--background-color-body);
-    transition: all ease 0.5s;
-}
-
 @media (max-width: 1170px) {
     .menu__previews {
         grid-template-columns: 1fr 1fr 1fr;
@@ -128,5 +119,17 @@
 
     .menu__tab {
         margin: 0;
+    }
+}
+
+@media (hover: hover) {
+    .preview:hover >  .preview__img img {
+        transform: scale(100%);
+        transition: all ease 0.5s;
+    }
+
+    .menu__button:hover svg path {
+        stroke: var(--background-color-body);
+        transition: all ease 0.5s;
     }
 }
