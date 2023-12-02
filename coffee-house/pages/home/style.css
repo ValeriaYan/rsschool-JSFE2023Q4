@@ -268,8 +268,4 @@
         transform: scale(100%);
         transition: all ease 1s;
     }
-
-    .about__img:hover img {
-        transform: scale(97%);
-    }
 }
