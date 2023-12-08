@@ -1,0 +1,73 @@
+.burger {
+    position: fixed;
+    top: 100px;
+    left: 100%;
+
+    flex-direction: column;
+    align-items: center;
+
+    height: calc(100vh - 100px);
+    width: 100vw;
+
+    background-color: var(--background-color-body);
+    font-size: 32px;
+
+    z-index: 4;
+    transition: all ease 0.5s;
+}
+
+.burger.active {
+    display: none;
+    left: 0;
+    transition: all ease 0.5s;
+}
+
+.burger .header__menu {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.burger .header__menu p {
+    margin: 0 20px 0 0;
+}
+
+.burger__nav .nav__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 var(--margin-between-sections) 0;
+}
+
+.burger__nav .nav__item { 
+    margin: 0 0 60px 0;
+    line-height: 125%;
+}
+
+.burger__nav .nav__item:last-child {
+    margin: 0;
+}
+
+.burger.active ~ .wrapper .burger-icon::before,
+.burger.active ~ .wrapper .burger-icon::after {
+    top: 50%;
+    transition: all ease 0.5s;
+}
+
+.burger.active ~ .wrapper .burger-icon::before {
+    transform: rotate(-45deg);
+    left: 29%;
+    
+}
+
+.burger.active ~ .wrapper .burger-icon::after {
+    transform: rotate(45deg);
+    left: 29%;
+}
+
+@media (max-width: 768px) {
+    .burger.active {
+        display: flex;
+    }
+}
