@@ -71,3 +71,9 @@
         display: flex;
     }
 }
+
+@media (min-width: 769px) {
+    body {
+        overflow: auto;
+    }
+} 
