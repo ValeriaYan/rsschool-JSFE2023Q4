@@ -215,6 +215,11 @@ a {
     background-repeat: no-repeat;
 }
 
+.button-tab__icon, 
+.button-tab__text {
+    pointer-events: none;
+}
+
 .button-tab_dessert > .button-tab__icon::before {
     background-image: url(../assets/icons/dessert-icon.png);
 }
