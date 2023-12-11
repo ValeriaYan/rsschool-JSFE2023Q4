@@ -2,6 +2,9 @@
 @import url(../../styles/common.css);
 @import url(../../styles/header.css);
 @import url(../../styles/footer.css);
+@import url(../../styles/burger.css);
+@import url(../../styles/modal.css);
+
 
 .menu {
     margin: 0 0 var(--margin-between-sections) 0;
@@ -28,20 +31,20 @@
     margin: 0;
 }
 
-.menu__previews {
+.menu__cards {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 38px;
     margin: 0 0 var(--margin-between-content) 0;
 }
 
-.preview {
+.card {
     border-radius: 40px;
     border: 1px solid var(--border-light, #C1B6AD);
     cursor: pointer;
 }
 
-.preview__img {
+.card__img {
     position: relative;
     width: 100%;
     height: 310px;
@@ -49,7 +52,7 @@
     overflow: hidden;
 }
 
-.preview__img img {
+.card__img img {
     position: absolute;
     object-fit: cover;
     width: 100%;
@@ -58,15 +61,15 @@
     transition: all ease 0.5s;
 }
 
-.preview__body {
+.card__body {
     height: 38%;
     display: grid;
     grid-template-rows: auto 1fr auto;
     padding: 20px;
 }
 
-.preview__name,
-.preview__text  {
+.card__name,
+.card__text  {
     margin: 0 0 12px 0;
 }
 
@@ -84,36 +87,40 @@
 }
 
 @media (max-width: 1170px) {
-    .menu__previews {
+    .menu__cards {
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: 1fr 1fr;
     }
 }
 
 @media (max-width: 910px) {
-    .menu__previews {
+    .menu__cards {
         padding: 0 12px;
         grid-template-columns: 1fr 1fr;
     }
 }
 
 @media (max-width: 768px) {
-    .menu__preview:nth-child(n + 5) {
+    .menu__card:nth-child(n + 5) {
         display: none;
     }
 
     .menu__button {
         display: flex;
     }
+
+    .menu__button.hide {
+        display: none;
+    }
 }
 
 @media (max-width: 570px) {
-    .menu__previews {
+    .menu__cards {
         grid-template-columns: 1fr;
         padding: 0 18px;
     }
 
-    .menu__preview {
+    .menu__card {
         min-height: 506px;
     }
 
@@ -123,7 +130,7 @@
 }
 
 @media (hover: hover) {
-    .preview:hover >  .preview__img img {
+    .card:hover >  .card__img img {
         transform: scale(100%);
         transition: all ease 0.5s;
     }
