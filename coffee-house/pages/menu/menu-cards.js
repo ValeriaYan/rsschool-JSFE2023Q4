@@ -1,4 +1,4 @@
-import arrayProducts from './products';
+import arrayProducts from './products.js';
 const cardsContainer = document.querySelector('.menu__cards');
 const tabs = document.querySelector('.menu__tabs');
 const loadMoreButton = document.querySelector('.menu__button');
