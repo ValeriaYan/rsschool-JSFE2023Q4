@@ -1,9 +1,9 @@
-import jsonProducts from '../../assets/products.json';
+import { arrayProducts } from '../../assets/products';
 const cardsContainer = document.querySelector('.menu__cards');
 const tabs = document.querySelector('.menu__tabs');
 const loadMoreButton = document.querySelector('.menu__button');
 
-export const products = jsonProducts.map((product, id = 0) => {
+export const products = arrayProducts.map((product, id = 0) => {
     product.id = id++; 
     return {...product}
 });
