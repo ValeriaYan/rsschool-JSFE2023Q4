@@ -191,13 +191,22 @@ a {
     transition: all ease 0.5s;
 }
 
+.button-tab.active .button-tab__icon {
+    background-color: var(--background-color-body);
+}
+
 .button-tab__icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: relative;
     width: 30px;
     height: 30px;
     background-color: var(--border-color-light);
     border-radius: 50%;
     margin: 0 8px 0 0;
+
+    color: var(--text-color-dark);
 }
 
 .button-tab__icon:last-child {
@@ -230,6 +239,25 @@ a {
 
 .button-tab_tea > .button-tab__icon::before {
     background-image: url(../assets/icons/tea-icon.png);
+}
+
+.overlay {
+    opacity: 0;
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.418);
+
+    transition: all ease 0.5s;
+}
+
+.overlay.active {
+    opacity: 1;
+    visibility: visible;
+    transition: all ease 0.5s;
 }
 
 @media (hover: none) {
