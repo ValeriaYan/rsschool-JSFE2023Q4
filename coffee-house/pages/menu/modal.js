@@ -1,4 +1,4 @@
-import { products } from "./menu-cards";
+import products from "./menu-cards";
 const cardsContainer = document.querySelector('.menu__cards');
 const modal = document.querySelector('.modal__wrapper');
 const overlay = document.querySelector('.overlay');

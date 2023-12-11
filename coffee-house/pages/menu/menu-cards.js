@@ -3,7 +3,7 @@ const cardsContainer = document.querySelector('.menu__cards');
 const tabs = document.querySelector('.menu__tabs');
 const loadMoreButton = document.querySelector('.menu__button');
 
-export const products = arrayProducts.map((product, id = 0) => {
+const products = arrayProducts.map((product, id = 0) => {
     product.id = id++; 
     return {...product}
 });
@@ -100,3 +100,5 @@ function showLoadMoreButton() {
 }
 
 fillCardsContainer('coffee');
+
+export default products;
