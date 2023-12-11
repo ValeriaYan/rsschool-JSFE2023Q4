@@ -2,6 +2,8 @@
 @import url(../../styles/common.css);
 @import url(../../styles/header.css);
 @import url(../../styles/footer.css);
+@import url(../../styles/burger.css);
+@import url(../../styles/slider.css);
 
 .enjoy,
 .favorite,
@@ -11,10 +13,19 @@
 }
 
 .enjoy__container {
-    background-image: url(../../assets/images/coffee-background.jpg);
-    background-position: center;
-    background-size: cover;
+    position: relative;
     padding: 100px;
+    border-radius: 40px;
+}
+
+.enjoy__video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -100;
     border-radius: 40px;
 }
 
@@ -37,66 +48,6 @@
     margin: 0 0 40px 0;
     text-align: center;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-
-.favorite__slider {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0 0 var(--margin-between-content) 0;
-}
-
-.slider__button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 3px;
-    transition: all ease 0.5s;
-}
-
-.slider__button svg path{
-    stroke: var(--border-color-dark);
-    transition: all ease 0.5s;
-}
-
-.slider__slide {
-    max-width: 480px;
-    text-align: center;
-}
-
-.slide__img {
-    width: 100%;
-    margin: 0 0 20px 0;
-}
-
-.slide__img img {
-    width: 100%;
-    object-fit: cover;
-}
-.slide__name,
-.slide__text {
-    margin: 0 0 16px 0;
-}
-
-.slider__controls {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-}
-.slider__control {
-    width: 40px;
-    height: 4px;
-    background-color: var(--border-color-light);
-    border-radius: 100px;
-    margin:  0 12px 0 0;
-}
-
-.slider__control.active {
-    background-color: var(--border-color-dark);
-}
-
-.slider__control:last-child {
-    margin: 0;
 }
 
 .about__title {
