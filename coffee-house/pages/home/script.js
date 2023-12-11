@@ -1,2 +1,2 @@
-import '/coffee-house/scripts/burger';
-import '/coffee-house/scripts/slider'
+import '../../scripts/burger';
+import '../../scripts/slider'
