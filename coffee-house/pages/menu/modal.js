@@ -66,6 +66,7 @@ function hideModal() {
     currentSizePrice = null;
     currentAdditivePrice = null;
     setActiveSizeBtn(sizesModal.children[0]);
+    setActiveAdditiveBtn();
     removeAllActiveAdditiveBtn();
     
     modal.classList.remove('active');
@@ -110,7 +111,9 @@ function setActiveSizeBtn(btn) {
 }
 
 function setActiveAdditiveBtn(btn) {
-    btn.classList.toggle('active');
+    if(btn) {
+        btn.classList.toggle('active');
+    }
 }
 
 function removeAllActiveAdditiveBtn() {
