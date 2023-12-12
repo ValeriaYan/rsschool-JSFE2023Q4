@@ -30,10 +30,6 @@
     margin: 0 0 var(--margin-between-content) 0;
 }
 
-.slider__slides:hover ~ .slider__controls .slider__control div {
-    animation-play-state: paused;
-}
-
 .slider__container {
     position: relative;
     left: 0;
@@ -86,6 +82,7 @@
 .slider__control.active div {
     background-color: var(--border-color-dark);
     animation: fill-slider-control 5s linear;
+    animation-play-state: running;
 }
 
 .slider__control.active.pause div {
@@ -103,5 +100,12 @@
 
     to {
         width: 100%;
+    }
+}
+
+
+@media (hover: hover) {
+    .slider__slides:hover ~ .slider__controls .slider__control div {
+        animation-play-state: paused;
     }
 }
