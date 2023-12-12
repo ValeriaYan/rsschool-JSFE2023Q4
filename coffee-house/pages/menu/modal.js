@@ -66,7 +66,7 @@ function hideModal() {
     currentSizePrice = null;
     currentAdditivePrice = null;
     setActiveSizeBtn(sizesModal.children[0]);
-    setActiveAdditiveBtn();
+    removeAllActiveAdditiveBtn();
     
     modal.classList.remove('active');
     overlay.classList.remove('active');
@@ -110,9 +110,14 @@ function setActiveSizeBtn(btn) {
 }
 
 function setActiveAdditiveBtn(btn) {
-    if(btn) {
-        btn.classList.toggle('active');
+    btn.classList.toggle('active');
+}
+
+function removeAllActiveAdditiveBtn() {
+    for(let i = 0; i < additivesModal.children.length; i++) {
+        additivesModal.children[i].classList.remove('active');
     }
+
 }
 
 function getFullPrice() {
