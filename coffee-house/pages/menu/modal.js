@@ -13,7 +13,7 @@ const priceModal = modal.querySelector('.modal__price .price');
 let currentProduct = null;
 let productPrice = null;
 let currentSizePrice = null;
-let currentAdditivePrice = null;
+let currentAdditivePrice = 0;
 
 
 cardsContainer.addEventListener('click', clickOnCardsContainer);
@@ -89,13 +89,13 @@ function clickOnAdditive(event) {
     const parent = event.target.closest('.modal__tab')
     if(parent) {
         setActiveAdditiveBtn(parent);
+        const index = parent.dataset.index;
+        const addPrice = currentProduct.additives[index]["add-price"];
         if(parent.classList.contains('active')) {
-            const index = parent.dataset.index;
-            const addPrice = currentProduct.additives[index]["add-price"];
-            currentAdditivePrice = addPrice;
+            currentAdditivePrice += +addPrice;
             priceModal.textContent = `$${getFullPrice()}`;
         } else {
-            currentAdditivePrice = 0;
+            currentAdditivePrice -= +addPrice;
             priceModal.textContent = `$${getFullPrice()}`;
         }
     }
@@ -113,20 +113,9 @@ function setActiveAdditiveBtn(btn) {
     if(btn) {
         btn.classList.toggle('active');
     }
-    for(let i = 0; i < additivesModal.children.length; i++) {
-        if(additivesModal.children[i] !== btn) {
-            additivesModal.children[i].classList.remove('active');
-        }
-    }
-
 }
 
 function getFullPrice() {
     const fullPrice = +productPrice + +currentAdditivePrice + +currentSizePrice;
-    if(fullPrice.toString().length == 1) {
-        return `${fullPrice}.00`
-    }
-    if(fullPrice.toString().length == 3) {
-        return `${fullPrice}0`
-    }
+    return fullPrice.toFixed(2).toString();
 }
